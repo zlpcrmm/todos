@@ -15,6 +15,12 @@ const todos = (state = [], action) => {
           ? {...todo, completed: !todo.completed}
           : todo
       )
+      case 'QUERY_ACTION_DONE':
+        return [...state,{
+          id:action.id,
+          text: action.text,
+          completed: false
+        }]
     default:
       return state
   }
